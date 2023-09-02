@@ -1,4 +1,4 @@
-package com.peng.model.dtos;
+package com.peng.model.common.dtos;
 
 import java.io.Serializable;
 

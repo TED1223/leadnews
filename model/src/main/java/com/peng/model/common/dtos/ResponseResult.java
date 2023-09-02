@@ -1,7 +1,7 @@
-package com.peng.model.dtos;
+package com.peng.model.common.dtos;
 
 import com.alibaba.fastjson.JSON;
-import com.peng.model.enums.AppHttpCodeEnum;
+import com.peng.model.common.enums.AppHttpCodeEnum;
 
 import java.io.Serializable;
 import java.util.HashMap;

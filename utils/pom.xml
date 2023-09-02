@@ -1,17 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.peng</groupId>
-    <artifactId>utils</artifactId>
-    <packaging>jar</packaging>
-    <version>0.0.1</version>
-    <name>utils</name>
-
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>leadnews</artifactId>
         <groupId>com.peng</groupId>
         <version>0.0.1</version>
     </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>utils</artifactId>
+    <packaging>jar</packaging>
+
+    <name>utils</name>
 
     <dependencies>
         <dependency>
@@ -48,10 +47,10 @@
             <artifactId>commons-beanutils</artifactId>
             <version>1.9.3</version>
         </dependency>
+        <!--poi-->
     </dependencies>
 
     <properties>
-        <project.bulid.sourceEncoding>UTF-8</project.bulid.sourceEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
 </project>

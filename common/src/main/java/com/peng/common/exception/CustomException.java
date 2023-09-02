@@ -1,6 +1,6 @@
 package com.peng.common.exception;
 
-import com.peng.model.enums.AppHttpCodeEnum;
+import com.peng.model.common.enums.AppHttpCodeEnum;
 
 /**
  * @author: pengshengfeng

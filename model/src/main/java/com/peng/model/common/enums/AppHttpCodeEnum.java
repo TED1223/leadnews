@@ -1,4 +1,4 @@
-package com.peng.model.enums;
+package com.peng.model.common.enums;
 
 public enum AppHttpCodeEnum {
     // 成功段0

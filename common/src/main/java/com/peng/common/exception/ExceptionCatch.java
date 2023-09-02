@@ -1,11 +1,10 @@
 package com.peng.common.exception;
 
-import com.peng.model.dtos.ResponseResult;
-import com.peng.model.enums.AppHttpCodeEnum;
+import com.peng.model.common.dtos.ResponseResult;
+import com.peng.model.common.enums.AppHttpCodeEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
