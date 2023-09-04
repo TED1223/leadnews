@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.peng.article.mapper.ApArticleMapper">
+    
+    <sql id="column_list">
+        t.id,t.title,t.author_id,t.author_name,t.channel_id,t.channel_name,t.layout,t.flag,t.images,t.labels,
+        t.likes,t.collection,t.comment,t.views,t.province_id,t.city_id,t.county_id,t.created_time,
+        t.publish_time,t.sync_status,t.static_url
+    </sql>
+
+    <resultMap id="resultMap" type="com.peng.model.article.pojo.ApActicle">
+        <id property="id" column="id"/>
+        <result column="title" property="title"/>
+        <result column="author_id" property="authorId"/>
+        <result column="author_name" property="authorName"/>
+        <result column="channel_id" property="channelId"/>
+        <result column="channel_name" property="channelName"/>
+        <result column="layout" property="layout"/>
+        <result column="flag" property="flag"/>
+        <result column="images" property="images"/>
+        <result column="labels" property="labels"/>
+        <result column="likes" property="likes"/>
+        <result column="collection" property="collection"/>
+        <result column="comment" property="comment"/>
+        <result column="views" property="views"/>
+        <result column="province_id" property="provinceId"/>
+        <result column="city_id" property="cityId"/>
+        <result column="county_id" property="countyId"/>
+        <result column="created_time" property="createdTime"/>
+        <result column="publish_time" property="publishTime"/>
+        <result column="sync_status" property="syncStatus"/>
+        <result column="static_url" property="staticUrl"/>
+    </resultMap>
+
+    <select id="loadArticleList" resultMap="resultMap">
+        SELECT
+
+
+        FROM ap_article t1
+        LEFT JOIN ap_article_config t2 ON t1.id = t2.article_id
+        WHERE
+        t1.is_deltete != 1
+        AND t2.is_down != 1
+        <if test="type ! = null">
+            <!-- loadmore -->
+            <if test="type == 1">
+                AND t1.publish_time <![CDATA[<]]> #{articleHome.minBehostTime}
+            </if>
+            <if test="type == 2">
+                AND t1.publish_time <![CDATA[>]]> #{articleHome.maxBehostTime}
+            </if>
+            <if test="articleHome.tag != '__all__'">
+                and t1.channel_id = #{articleHome.tag}
+            </if>
+        </if>
+        ORDER BY t1.publish_time DESC
+        LIMIT #{articleHome.size}
+    </select>
+
+
+</mapper>
