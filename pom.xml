@@ -67,6 +67,7 @@
         <knife4j.version>2.0.2</knife4j.version>
         <com.alibaba.cloud>2.2.5.RELEASE</com.alibaba.cloud>
         <xxl.job.version>2.2.0-SNAPSHOT</xxl.job.version>
+        <file.starter>0.0.1</file.starter>
     </properties>
     <dependencies>
         <!--日志处理包-->
@@ -85,6 +86,12 @@
     <dependencyManagement>
 
         <dependencies>
+            <!--starter-->
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>file-starter</artifactId>
+                <version>${file.starter}</version>
+            </dependency>
             <!--内部依赖工程-->
             <dependency>
                 <artifactId>feign-api</artifactId>
