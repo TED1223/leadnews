@@ -26,6 +26,10 @@
         <!-- 引入依赖模块 -->
         <dependency>
             <groupId>com.peng</groupId>
+            <artifactId>file-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.peng</groupId>
             <artifactId>model</artifactId>
         </dependency>
         <dependency>
