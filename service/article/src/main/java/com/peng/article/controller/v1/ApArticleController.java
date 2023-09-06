@@ -3,7 +3,7 @@ package com.peng.article.controller.v1;
 import com.peng.article.service.ApArticleService;
 import com.peng.model.article.dto.ArticleHomeDTO;
 import com.peng.model.common.dtos.ResponseResult;
-import com.peng.model.constants.ArticleConstants;
+import com.peng.common.constants.ArticleConstants;
 import org.springframework.web.bind.annotation.*;
 
 /**

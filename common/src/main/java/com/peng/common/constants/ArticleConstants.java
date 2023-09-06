@@ -1,4 +1,4 @@
-package com.peng.model.constants;
+package com.peng.common.constants;
 
 /**
  * @author: pengshengfeng

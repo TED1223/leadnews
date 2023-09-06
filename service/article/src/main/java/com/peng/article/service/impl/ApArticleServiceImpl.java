@@ -6,7 +6,7 @@ import com.peng.article.service.ApArticleService;
 import com.peng.model.article.dto.ArticleHomeDTO;
 import com.peng.model.article.pojo.ApActicle;
 import com.peng.model.common.dtos.ResponseResult;
-import com.peng.model.constants.ArticleConstants;
+import com.peng.common.constants.ArticleConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;

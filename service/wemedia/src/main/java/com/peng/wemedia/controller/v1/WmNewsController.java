@@ -1,13 +1,11 @@
 package com.peng.wemedia.controller.v1;
 
 import com.peng.model.common.dtos.ResponseResult;
+import com.peng.model.wemedia.dto.WmNewsDTO;
 import com.peng.model.wemedia.dto.WmNewsPageReqDTO;
 import com.peng.wemedia.service.WmNewsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author: pengshengfeng
@@ -26,7 +24,12 @@ public class WmNewsController {
     }
 
     @GetMapping("/list")
-    public ResponseResult list(@RequestParam WmNewsPageReqDTO wmNewsPageReqDTO){
+    public ResponseResult list(@RequestParam WmNewsPageReqDTO wmNewsPageReqDTO) {
         return wmNewsService.list(wmNewsPageReqDTO);
+    }
+
+    @PostMapping("/save")
+    public ResponseResult save(@RequestBody WmNewsDTO wmNewsDTO) {
+        return wmNewsService.saveNews(wmNewsDTO);
     }
 }
