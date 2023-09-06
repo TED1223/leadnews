@@ -29,7 +29,7 @@ public class WmMaterialController {
     }
 
     @GetMapping("/list")
-    public ResponseResult list(@RequestBody WmMaterialDTO wmMaterialDTO){
+    public ResponseResult list(@RequestParam WmMaterialDTO wmMaterialDTO){
         return wmMaterialService.list(wmMaterialDTO);
     }
 }
