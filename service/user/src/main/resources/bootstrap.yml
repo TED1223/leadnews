@@ -1,0 +1,12 @@
+server:
+  port: 51801
+spring:
+  application:
+    name: user
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.129.155:8848
+      config:
+        server-addr: 192.168.129.155:8848
+        file-extension: yml

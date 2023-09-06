@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>com.peng</groupId>
     <artifactId>leadnews</artifactId>
+    <packaging>pom</packaging>
     <version>0.0.1</version>
     <modules>
         <module>common</module>
         <module>utils</module>
         <module>model</module>
         <module>feign-api</module>
-        <module>gateway</module>
         <module>service</module>
+        <module>gateway</module>
         <module>test</module>
+        <module>basic</module>
     </modules>
-    <packaging>pom</packaging>
 
+    <!-- 继承Spring boot工程 -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.3.9.RELEASE</version>
     </parent>
-
     <properties>
         <!-- 项目源码及编译输出的编码 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -64,8 +67,8 @@
         <knife4j.version>2.0.2</knife4j.version>
         <com.alibaba.cloud>2.2.5.RELEASE</com.alibaba.cloud>
         <xxl.job.version>2.2.0-SNAPSHOT</xxl.job.version>
+        <file.starter>0.0.1</file.starter>
     </properties>
-
     <dependencies>
         <!--日志处理包-->
         <dependency>
@@ -83,6 +86,12 @@
     <dependencyManagement>
 
         <dependencies>
+            <!--starter-->
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>file-starter</artifactId>
+                <version>${file.starter}</version>
+            </dependency>
             <!--内部依赖工程-->
             <dependency>
                 <artifactId>feign-api</artifactId>
@@ -191,12 +200,11 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.dataformat</groupId>
-                <artifactId>jackson-dataformat-cbor</artifactId>
-                <version>${fastjson.dataformat.version}</version>
-            </dependency>
+            </dependency><dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-cbor</artifactId>
+            <version>${fastjson.dataformat.version}</version>
+        </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-xml</artifactId>
@@ -270,12 +278,6 @@
                 <groupId>org.springframework.kafka</groupId>
                 <artifactId>spring-kafka</artifactId>
                 <version>${kafka.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <artifactId>kafka-clients</artifactId>
-                        <groupId>org.apache.kafka</groupId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.apache.kafka</groupId>
@@ -284,10 +286,6 @@
                 <exclusions>
                     <exclusion>
                         <artifactId>connect-json</artifactId>
-                        <groupId>org.apache.kafka</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>kafka-clients</artifactId>
                         <groupId>org.apache.kafka</groupId>
                     </exclusion>
                 </exclusions>
@@ -350,7 +348,7 @@
         </testResources>
     </build>
 
-    <repositories>
+<!--    <repositories>
         <repository>
             <id>spring</id>
             <url>https://maven.aliyun.com/repository/spring</url>
@@ -361,5 +359,6 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
-    </repositories>
+    </repositories>-->
+
 </project>
